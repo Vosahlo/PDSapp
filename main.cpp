@@ -20,7 +20,6 @@ int main(int argv, char **args) {
 /*TODO
  * list zemi.
  * hlavni recnik vetsi
- * sideWindow to samy co v hlavnim
  * timer
  * autotimer na tlacitka
  * popsat okynka
@@ -34,8 +33,10 @@ int main(int argv, char **args) {
  * labeltema nastavovaci v mainwindow zprovoznit (slot UpdateTopic v SideWindow)
  * slider na hlasitost // asi nejde :/
  * ikonka programu
+ * dycky pri zmene vykreslit FrontaWidget znova
  * odstraneni libovolnyho statu z fronty kliknutim na vlajecku v mainwindow (klikatko remove?)
  * osetrit pridani statu 2x
+ * cudlik na zobrazeni vedlejsiho okna
  */
 
 

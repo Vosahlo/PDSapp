@@ -24,6 +24,7 @@ public:
 
 private:
     SideWindow *sideWindow;
+    EditSessionWindow * editSessionWindow;
     QList<Stat *> *fronta;
     QList<Stat *> *frontaR;
     int cudlik = -1;
@@ -42,6 +43,8 @@ private slots:
     void addRSpeech();
 
     void remove();
+
+    void velikost();
 };
 
 

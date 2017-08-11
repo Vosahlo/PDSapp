@@ -3,6 +3,7 @@
 //
 
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QPushButton>
 #include "SideWindow.h"
 #include <QtWidgets/QLabel>
@@ -16,7 +17,7 @@
 SideWindow::SideWindow() {
     QIcon icon = QIcon(":/icon.jpg");
     setWindowIcon(icon);
-    QHBoxLayout *layout= new QHBoxLayout;
+    QVBoxLayout *layout= new QVBoxLayout;
     QLabel *tema = new QLabel("topic");
     layout->addWidget(tema);
     this->setLayout(layout);

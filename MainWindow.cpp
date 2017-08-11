@@ -42,7 +42,7 @@ MainWindow::MainWindow() {
     frontaWidget = new QFrontaWidget;
 
 
-    setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
     //icon
     QIcon icon = QIcon(":/icon.jpg");
@@ -101,7 +101,7 @@ MainWindow::MainWindow() {
     this->setLayout(hlavniLayout);
     sideWindow = new SideWindow;
     sideWindow->show();
-    //editSessionWindow = new EditSessionWindow;
+    editSessionWindow = new EditSessionWindow;
 
     this->setWindowTitle("Ovladaci panel");
     hlavniLayout->addWidget(frontaWidget);
@@ -110,15 +110,18 @@ MainWindow::MainWindow() {
     connect(addbutton, SIGNAL(clicked()), sideWindow, SLOT(addVFlag()));
     connect(addbutton, SIGNAL(clicked()), this, SLOT(addSpeech()));
     connect(addRbutton, SIGNAL(clicked()), this, SLOT(addRSpeech()));
+
     connect(addRbutton, SIGNAL(clicked()), sideWindow, SLOT(addHFlag()));
     connect(move, SIGNAL(clicked()), sideWindow, SLOT(removeLane()));
     connect(move, SIGNAL(clicked()), frontaWidget, SLOT(next()));
     connect(remove,SIGNAL(clicked()),frontaWidget,SLOT(remove()));
-    //connect(move, SIGNAL(clicked()), SideWindow.fro, SLOT(next()));
+    connect(move, SIGNAL(clicked()), sideWindow->frontaWidget, SLOT(next()));
     //connect(zakliknutejStat,SIGNAL(clicked()),this,SLOT())
     connect(startTimer, SIGNAL(clicked()), this, SLOT(startTime()));
     connect(editSession,SIGNAL(clicked()),this,SLOT(openEditSessionWindow()));
     connect(beep,SIGNAL(clicked()),this,SLOT(beepnuti()));
+    connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
+    connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
     //if (EditSession->clicked()){
     //    EditSessionWindow->show();
     //}
@@ -126,6 +129,7 @@ MainWindow::MainWindow() {
 
     fronta = new QList<Stat *>;
     frontaR = new QList<Stat *>;
+    this->adjustSize();
 
 
 }
@@ -138,11 +142,13 @@ void MainWindow::addSpeech() {
     image->setPixmap(QPixmap::fromImage(QImage(QString(":/flags-mini/%1.png").arg(staty[cudlik].shortName))));
     // frontaLayout pridat image
     frontaWidget->addSpeech(cudlik);
+    sideWindow->frontaWidget->addSpeech(cudlik);
 }
 
 void MainWindow::addRSpeech() {
     frontaR->append(&staty[cudlik]);
     frontaWidget->addRSpeech(cudlik);
+    sideWindow->frontaWidget->addRSpeech(cudlik);
     //qDebug()<<"pridano";
 }
 
@@ -164,9 +170,14 @@ void MainWindow::startTime() {
 
 void MainWindow::openEditSessionWindow() {
     //EditSessionWindow = new EditSessionWindow;
+editSessionWindow->show();
 
 }
 
 void MainWindow::beepnuti() {
     Beep(1500,500);
+}
+
+void MainWindow::velikost() {
+this->adjustSize();
 }

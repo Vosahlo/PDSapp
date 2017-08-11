@@ -37,6 +37,8 @@ int main(int argv, char **args) {
  * odstraneni libovolnyho statu z fronty kliknutim na vlajecku v mainwindow (klikatko remove?)
  * osetrit pridani statu 2x
  * cudlik na zobrazeni vedlejsiho okna
+ *  side
+ *
  */
 
 

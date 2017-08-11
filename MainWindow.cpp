@@ -122,15 +122,11 @@ MainWindow::MainWindow() {
     connect(beep,SIGNAL(clicked()),this,SLOT(beepnuti()));
     connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
     connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
-    //if (EditSession->clicked()){
-    //    EditSessionWindow->show();
-    //}
 
 
     fronta = new QList<Stat *>;
     frontaR = new QList<Stat *>;
     this->adjustSize();
-
 
 }
 

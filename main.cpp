@@ -19,6 +19,7 @@ int main(int argv, char **args) {
 
 /*TODO
  * list zemi.
+ * http://doc.qt.io/qt-5/qsignalmapper.html signal mapper
  * hlavni recnik vetsi
  * timer
  * autotimer na tlacitka
@@ -34,6 +35,7 @@ int main(int argv, char **args) {
  * slider na hlasitost // asi nejde :/
  * ikonka programu
  * dycky pri zmene vykreslit FrontaWidget znova
+ * this->adjustSize(); i pro sidewindow
  * odstraneni libovolnyho statu z fronty kliknutim na vlajecku v mainwindow (klikatko remove?)
  * osetrit pridani statu 2x
  * cudlik na zobrazeni vedlejsiho okna

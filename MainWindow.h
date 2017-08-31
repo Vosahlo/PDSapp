@@ -8,6 +8,7 @@
 
 #include <QtCore/QArgument>
 #include <QtWidgets/QDialog>
+#include <QtCore/QSignalMapper>
 #include "SideWindow.h"
 #include "EditSessionWindow.h"
 #include "Stat.h"
@@ -29,6 +30,7 @@ private:
     QList<Stat *> *frontaR;
     int cudlik = -1;
     QFrontaWidget * frontaWidget;
+    QSignalMapper * signalMapper;
 
 private slots:
     void addSpeech();

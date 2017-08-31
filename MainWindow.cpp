@@ -41,13 +41,13 @@ MainWindow::MainWindow() {
     QLabel *tema = new QLabel("tema:");
     frontaWidget = new QFrontaWidget;
 
+    signalMapper = new QSignalMapper(this);
 
     setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
 
     //icon
     QIcon icon = QIcon(":/icon.jpg");
     setWindowIcon(icon);
-
 
 // radiobuttony statu
 
@@ -60,8 +60,11 @@ MainWindow::MainWindow() {
         gridLayout->addWidget(zeme, i / 5, (i % 5) * 3 );
         gridLayout->addWidget(image, i / 5, (i % 5) * 3 + 1);
         gridLayout->addWidget(meno, i / 5, (i % 5) * 3 + 2);
+
         connect(image, SIGNAL(clicked()), zeme, SLOT(click()));
         connect(meno, SIGNAL(clicked()), zeme, SLOT(click()));
+        //connect(image, SIGNAL(clicked()), signalMapper, SLOT(map()));
+        //connect(meno, SIGNAL(clicked()), signalMapper, SLOT(map()));
         zeme->setObjectName(QString::number(i));
         connect(zeme, SIGNAL(clicked()), this, SLOT(clicked()));
         if (i==0){
@@ -105,6 +108,8 @@ MainWindow::MainWindow() {
 
     this->setWindowTitle("Ovladaci panel");
     hlavniLayout->addWidget(frontaWidget);
+
+
 
     //connecty
     connect(addbutton, SIGNAL(clicked()), sideWindow, SLOT(addVFlag()));

@@ -6,6 +6,7 @@
 #define PDSAPP_QFRONTALAYOUT_H
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QGridLayout>
+#include <QtCore/QSignalMapper>
 
 
 class QFrontaWidget: public QWidget {
@@ -28,6 +29,7 @@ private:
     int posledni= 0;
     int Rprvni = 0;
     int Rposledni = 0;
+    QSignalMapper * signalMapper;
 
 
 };

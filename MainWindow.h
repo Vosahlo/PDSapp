@@ -21,8 +21,8 @@ public:
     MainWindow();
 
 
-
-
+public slots:
+    void velikost();
 private:
     SideWindow *sideWindow;
     EditSessionWindow * editSessionWindow;
@@ -46,8 +46,6 @@ private slots:
     void addRSpeech();
 
     void remove();
-
-    void velikost();
 };
 
 

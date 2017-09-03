@@ -52,4 +52,9 @@ void SideWindow::updateTopic() {
 
 }
 
+void SideWindow::velikost() {
+    this->adjustSize();
+
+}
+
 

@@ -132,6 +132,10 @@ MainWindow::MainWindow() {
     connect(beep,SIGNAL(clicked()),this,SLOT(beepnuti()));
     connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
     connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
+    connect(frontaStatu, SIGNAL(changed()), this, SLOT(velikost()));
+    connect(frontaStatu, SIGNAL(changed()), this, SLOT(velikost()));
+    connect(frontaStatu, SIGNAL(changed()), sideWindow, SLOT(velikost()));
+    connect(frontaStatu, SIGNAL(changed()), sideWindow, SLOT(velikost()));
 
 
     fronta = new QList<Stat *>;

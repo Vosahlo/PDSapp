@@ -21,6 +21,7 @@ public slots:
     void addHFlag();
     void removeLane();
     void updateTopic();
+    void velikost();
 };
 
 

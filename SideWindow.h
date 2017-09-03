@@ -11,7 +11,7 @@
 class SideWindow : public QDialog {
     Q_OBJECT
 public:
-    SideWindow();
+    SideWindow(FrontaStatu *frontaStatu);
     QFrontaWidget * frontaWidget;
 private:
 

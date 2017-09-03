@@ -40,7 +40,8 @@ MainWindow::MainWindow() {
     QHBoxLayout *cudlikyLayout = new QHBoxLayout;
     QHBoxLayout *temaLayout = new QHBoxLayout;
     QLabel *tema = new QLabel("tema:");
-    frontaWidget = new QFrontaWidget;
+    frontaStatu = new FrontaStatu();
+    frontaWidget = new QFrontaWidget(this,frontaStatu);
 
     signalMapper = new QSignalMapper(this);
 
@@ -106,7 +107,7 @@ MainWindow::MainWindow() {
     temaLayout->addWidget(postTema);
 
     this->setLayout(hlavniLayout);
-    sideWindow = new SideWindow;
+    sideWindow = new SideWindow(frontaStatu);
     sideWindow->show();
     editSessionWindow = new EditSessionWindow;
 
@@ -116,14 +117,14 @@ MainWindow::MainWindow() {
 
 
     //connecty
-    connect(addbutton, SIGNAL(clicked()), sideWindow, SLOT(addVFlag()));
+    //connect(addbutton, SIGNAL(clicked()), sideWindow, SLOT(addVFlag()));
     connect(addbutton, SIGNAL(clicked()), this, SLOT(addSpeech()));
     connect(addRbutton, SIGNAL(clicked()), this, SLOT(addRSpeech()));
 
-    connect(addRbutton, SIGNAL(clicked()), sideWindow, SLOT(addHFlag()));
-    connect(move, SIGNAL(clicked()), sideWindow, SLOT(removeLane()));
-    connect(move, SIGNAL(clicked()), frontaWidget, SLOT(next()));
-    connect(remove,SIGNAL(clicked()),frontaWidget,SLOT(remove()));
+    //connect(addRbutton, SIGNAL(clicked()), sideWindow, SLOT(addHFlag()));
+    //connect(move, SIGNAL(clicked()), sideWindow, SLOT(removeLane()));
+    connect(move, SIGNAL(clicked()), frontaStatu, SLOT(next()));
+   // connect(remove,SIGNAL(clicked()),frontaWidget,SLOT(remove()));
     connect(move, SIGNAL(clicked()), sideWindow->frontaWidget, SLOT(next()));
     //connect(zakliknutejStat,SIGNAL(clicked()),this,SLOT())
     connect(startTimer, SIGNAL(clicked()), this, SLOT(startTime()));
@@ -143,23 +144,23 @@ MainWindow::MainWindow() {
 void MainWindow::addSpeech() {
     fronta->append(&staty[cudlik]);
     //qDebug()<<"pridano";
-    ClickableLabel *image = new ClickableLabel();
-    image->setPixmap(QPixmap::fromImage(QImage(QString(":/flags-mini/%1.png").arg(staty[cudlik].shortName))));
+    //ClickableLabel *image = new ClickableLabel();
+    //image->setPixmap(QPixmap::fromImage(QImage(QString(":/flags-mini/%1.png").arg(staty[cudlik].shortName))));
     // frontaLayout pridat image
-    frontaWidget->addSpeech(cudlik);
-    sideWindow->frontaWidget->addSpeech(cudlik);
+    frontaStatu->addSpeech(cudlik);
+    //sideWindow->frontaWidget->addSpeech(cudlik);
 }
 
 void MainWindow::addRSpeech() {
     frontaR->append(&staty[cudlik]);
-    frontaWidget->addRSpeech(cudlik);
-    sideWindow->frontaWidget->addRSpeech(cudlik);
+    frontaStatu->addRSpeech(cudlik);
+    //sideWindow->frontaWidget->addRSpeech(cudlik);
     //qDebug()<<"pridano";
 }
 
 void MainWindow::remove() {
     //frontaR->erase()
-//    frontaWidget->remove();
+//    frontaStatu->remove();
 }
 
 

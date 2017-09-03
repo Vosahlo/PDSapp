@@ -19,6 +19,7 @@ void FrontaStatu::addSpeech(int index) {
         while (pom->dalsi) pom = pom->dalsi;
         pom->dalsi = item;
     }
+    emit changed();
 }
 
 void FrontaStatu::addRSpeech(int index) {
@@ -32,6 +33,8 @@ void FrontaStatu::addRSpeech(int index) {
         while (pom->reakce) pom = pom->reakce;
         pom->reakce = item;
     }
+
+    emit changed();
 }
 
 void FrontaStatu::next() {
@@ -59,4 +62,5 @@ void FrontaStatu::next() {
         delete pom;
         active = (items) ? 0 : -1;
     }
+    emit changed();
 }

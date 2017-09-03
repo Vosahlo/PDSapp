@@ -7,13 +7,14 @@
 #include <QtWidgets/QWidget>
 #include <QtWidgets/QGridLayout>
 #include <QtCore/QSignalMapper>
+#include "FrontaStatu.h"
 
 
 class QFrontaWidget: public QWidget {
 
 Q_OBJECT
 public:
-    explicit QFrontaWidget(QWidget *parent = 0);
+    explicit QFrontaWidget(QWidget *parent = 0, FrontaStatu *frontaStatu = nullptr);
     void clear();
 public slots:
     void addSpeech(int index);
@@ -31,7 +32,7 @@ private:
     int Rprvni = 0;
     int Rposledni = 0;
     QSignalMapper * signalMapper;
-
+    FrontaStatu *frontaStatu = nullptr;
 
 
 };

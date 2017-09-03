@@ -23,6 +23,8 @@ public:
     };
 
     FrontaItem *get_items() { return this->items; };
+signals:
+    void changed();
 public slots:
     void addSpeech(int index);
     void addRSpeech(int index);

@@ -65,8 +65,8 @@ MainWindow::MainWindow() {
 
         connect(image, SIGNAL(clicked()), zeme, SLOT(click()));
         connect(meno, SIGNAL(clicked()), zeme, SLOT(click()));
-        //connect(image, SIGNAL(clicked()), signalMapper, SLOT(map()));
-        //connect(meno, SIGNAL(clicked()), signalMapper, SLOT(map()));
+        //connect(image, SIGNAL(clicked()), signal_mapper, SLOT(map()));
+        //connect(meno, SIGNAL(clicked()), signal_mapper, SLOT(map()));
         zeme->setObjectName(QString::number(i));
         connect(zeme, SIGNAL(clicked()), this, SLOT(clicked()));
         if (i==0){
@@ -125,7 +125,7 @@ MainWindow::MainWindow() {
     //connect(move, SIGNAL(clicked()), sideWindow, SLOT(removeLane()));
     connect(move, SIGNAL(clicked()), frontaStatu, SLOT(next()));
    // connect(remove,SIGNAL(clicked()),frontaWidget,SLOT(remove()));
-    connect(move, SIGNAL(clicked()), sideWindow->frontaWidget, SLOT(next()));
+//    connect(move, SIGNAL(clicked()), sideWindow->frontaWidget, SLOT(next()));
     //connect(zakliknutejStat,SIGNAL(clicked()),this,SLOT())
     connect(startTimer, SIGNAL(clicked()), this, SLOT(startTime()));
     connect(editSession,SIGNAL(clicked()),this,SLOT(openEditSessionWindow()));

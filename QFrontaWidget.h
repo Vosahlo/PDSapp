@@ -18,11 +18,14 @@ public:
     void clear();
 public slots:
     void refresh();
+signals:
+    void double_click(int i);
+    void double_click_r(int i);
 private:
     QGridLayout *layout;
-    QSignalMapper * signalMapper;
+    QSignalMapper * signal_mapper,*signal_mapper_r;
     FrontaStatu *frontaStatu = nullptr;
-
+private slots:
 
 };
 

@@ -3,6 +3,7 @@
 //
 
 #include "FrontaStatu.h"
+#include <QDebug>
 
 FrontaStatu::FrontaStatu() {
     items = nullptr;
@@ -62,5 +63,27 @@ void FrontaStatu::next() {
         delete pom;
         active = (items) ? 0 : -1;
     }
+    emit changed();
+}
+
+void FrontaStatu::remove_dalsi(int i) {
+   FrontaItem *pom = items;
+    for (int j = 0; j < i - 1; ++j) {
+        pom = pom ->dalsi;
+    }
+    FrontaItem *pom2 = pom->dalsi;
+    pom->dalsi = pom->dalsi->dalsi;
+    delete pom2;
+    emit changed();
+}
+
+void FrontaStatu::remove_r(int i) {
+    FrontaItem *pom = items;
+    for (int j = 0; j < i - 1; ++j) {
+        pom = pom ->reakce;
+    }
+    FrontaItem *pom2 = pom->reakce;
+    pom->reakce = pom->reakce->reakce;
+    delete pom2;
     emit changed();
 }

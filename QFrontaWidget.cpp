@@ -12,7 +12,14 @@ QFrontaWidget::QFrontaWidget(QWidget *parent, FrontaStatu *frontaStatu) {
     layout = new QGridLayout;
     this->setLayout(layout);
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    signalMapper = new QSignalMapper(this);
+    signal_mapper = new QSignalMapper(this);
+    signal_mapper_r = new QSignalMapper(this);
+
+    connect(signal_mapper,SIGNAL(mapped(int)),this,SIGNAL(double_click(int)));
+    connect(signal_mapper_r,SIGNAL(mapped(int)),this,SIGNAL(double_click_r(int)));
+
+    connect(this,SIGNAL(double_click(int)),frontaStatu,SLOT(remove_dalsi(int)));
+    connect(this,SIGNAL(double_click_r(int)),frontaStatu,SLOT(remove_r(int)));
 
 }
 
@@ -31,6 +38,8 @@ void QFrontaWidget::refresh() {
         ClickableLabel *image = new ClickableLabel(this);
         image->setPixmap(QPixmap::fromImage(QImage(QString(":/flags-mini/%1.png").arg(pom->stat->shortName))));
         image->setMargin(3);
+        connect(image,SIGNAL(doubleClicked()),signal_mapper_r,SLOT(map()));
+        signal_mapper_r->setMapping(image,i);
         layout->addWidget(image, 0, i);
         pom = pom->reakce;
         i++;
@@ -42,6 +51,8 @@ void QFrontaWidget::refresh() {
         ClickableLabel *image = new ClickableLabel(this);
         image->setPixmap(QPixmap::fromImage(QImage(QString(":/flags-mini/%1.png").arg(pom->stat->shortName))));
         image->setMargin(3);
+        connect(image,SIGNAL(doubleClicked()),signal_mapper,SLOT(map()));
+        signal_mapper->setMapping(image,i);
         layout->addWidget(image, i, 0);
         pom = pom->dalsi;
         i++;

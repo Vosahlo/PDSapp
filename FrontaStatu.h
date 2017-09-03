@@ -30,6 +30,9 @@ public slots:
     void addRSpeech(int index);
     void next();
 
+    void remove_dalsi(int i);
+    void remove_r(int i);
+
 private:
 
     FrontaItem *items;

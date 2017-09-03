@@ -35,11 +35,10 @@ int main(int argv, char **args) {
  * slider na hlasitost // asi nejde :/
  * ikonka programu
  * dycky pri zmene vykreslit FrontaWidget znova
- * this->adjustSize(); i pro sidewindow
- * odstraneni libovolnyho statu z fronty kliknutim na vlajecku v mainwindow (klikatko remove?)
  * osetrit pridani statu 2x
  * cudlik na zobrazeni vedlejsiho okna
- *  side
+ *
+ *  setWindowFlags(Qt::WindowStaysOnTopHint);
  *
  */
 

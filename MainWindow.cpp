@@ -78,6 +78,7 @@ MainWindow::MainWindow() {
     QTimer *timer = new QTimer(this);
     QCheckBox *autotimer = new QCheckBox();
     QPushButton *startTimer = new QPushButton("Start");
+    //remainingTime()
     timerLayout->addWidget(startTimer);
     timerLayout->addWidget(autotimer);
     timerLayout->addWidget(casBox);

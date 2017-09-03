@@ -71,5 +71,25 @@ void QFrontaWidget::next() {
 
     }
 
+void QFrontaWidget::refresh() {
+
+}
+
+void QFrontaWidget::clear() {
+    for (int u =0; u < layout->rowCount(); ++u) {
+        for (int i = 0; i < layout->columnCount(); ++i) {
+            QLayoutItem *item = layout->itemAtPosition(u, i);
+            if (!item) continue;
+
+            if (item->widget()) {
+                layout->removeWidget(item->widget());
+            } else {
+                layout->removeItem(item);
+            }
+            delete item;
+        }
+    }
+}
+
 
 

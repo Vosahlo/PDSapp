@@ -14,11 +14,12 @@ class QFrontaWidget: public QWidget {
 Q_OBJECT
 public:
     explicit QFrontaWidget(QWidget *parent = 0);
-
+    void clear();
 public slots:
     void addSpeech(int index);
     void addRSpeech(int index);
     void next();
+    void refresh();
    // void remove();
 
 
@@ -30,6 +31,7 @@ private:
     int Rprvni = 0;
     int Rposledni = 0;
     QSignalMapper * signalMapper;
+
 
 
 };

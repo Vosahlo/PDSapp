@@ -30,6 +30,7 @@ MainWindow::MainWindow() {
     QPushButton *postTema = new QPushButton("Update");
     QPushButton *remove = new QPushButton("Remove");
     QLineEdit * casBox = new QLineEdit();
+    QLabel *autotimerLabel = new QLabel("autotimer");
     QLineEdit * temaBox = new QLineEdit();
     QLabel *sekundy = new QLabel("[s]");
 
@@ -80,6 +81,7 @@ MainWindow::MainWindow() {
     QPushButton *startTimer = new QPushButton("Start");
     //remainingTime()
     timerLayout->addWidget(startTimer);
+    timerLayout->addWidget(autotimerLabel);
     timerLayout->addWidget(autotimer);
     timerLayout->addWidget(casBox);
     timerLayout->addWidget(sekundy);

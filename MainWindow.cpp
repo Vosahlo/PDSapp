@@ -171,7 +171,7 @@ void MainWindow::clicked() {
 
 void MainWindow::startTime() {
     //timer->start(1000);
-    timer->start(1000);
+    //timer->start(1000);
 }
 
 void MainWindow::openEditSessionWindow() {

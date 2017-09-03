@@ -14,7 +14,7 @@ class FrontaStatu : public QObject {
 public:
     explicit FrontaStatu();
     int get_active() {return this->active; };
-    FrontaItem *get_items() { return this->items; };
+
 
     struct FrontaItem {
         FrontaItem *dalsi = nullptr;
@@ -22,6 +22,7 @@ public:
         Stat *stat = nullptr;
     };
 
+    FrontaItem *get_items() { return this->items; };
 public slots:
     void addSpeech(int index);
     void addRSpeech(int index);

@@ -17,20 +17,9 @@ public:
     explicit QFrontaWidget(QWidget *parent = 0, FrontaStatu *frontaStatu = nullptr);
     void clear();
 public slots:
-    void addSpeech(int index);
-    void addRSpeech(int index);
-    void next();
     void refresh();
-   // void remove();
-
-
-
 private:
     QGridLayout *layout;
-    int prvni = 0;
-    int posledni= 0;
-    int Rprvni = 0;
-    int Rposledni = 0;
     QSignalMapper * signalMapper;
     FrontaStatu *frontaStatu = nullptr;
 

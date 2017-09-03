@@ -12,7 +12,6 @@ QFrontaWidget::QFrontaWidget(QWidget *parent) {
     setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     signalMapper = new QSignalMapper(this);
 
-
 }
 
 void QFrontaWidget::addSpeech(int index) {
@@ -37,7 +36,6 @@ void QFrontaWidget::addRSpeech(int index) {
         layout->addWidget(image, prvni, Rposledni + 1);
         image->setMargin(3);
         Rposledni++;
-
 
     }
 }

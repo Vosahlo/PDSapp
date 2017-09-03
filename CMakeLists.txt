@@ -14,7 +14,7 @@ find_package(Qt5Widgets REQUIRED)
 
 set(SOURCE_FILES main.cpp
 
-        Stat.cpp Stat.h SideWindow.cpp SideWindow.h MainWindow.cpp MainWindow.h EditSessionWindow.cpp EditSessionWindow.h ClickableLabel.cpp ClickableLabel.h QFrontaWidget.cpp QFrontaWidget.h)
+        Stat.cpp Stat.h SideWindow.cpp SideWindow.h MainWindow.cpp MainWindow.h EditSessionWindow.cpp EditSessionWindow.h ClickableLabel.cpp ClickableLabel.h QFrontaWidget.cpp QFrontaWidget.h FrontaStatu.cpp FrontaStatu.h)
 qt5_add_resources(RES res/res.qrc)
 add_executable(PDSapp ${SOURCE_FILES} ${RES})
 qt5_use_modules(PDSapp Core SerialPort)

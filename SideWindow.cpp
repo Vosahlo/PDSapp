@@ -14,14 +14,14 @@
 #include "Stat.h"
 
 
-SideWindow::SideWindow() {
+SideWindow::SideWindow(FrontaStatu *frontaStatu) {
     QIcon icon = QIcon(":/icon.jpg");
     setWindowIcon(icon);
     QVBoxLayout *layout= new QVBoxLayout;
     QLabel *tema = new QLabel("topic");
     layout->addWidget(tema);
     this->setLayout(layout);
-    frontaWidget = new QFrontaWidget;
+    frontaWidget = new QFrontaWidget(this,frontaStatu);
     layout->addWidget(frontaWidget);
 
 

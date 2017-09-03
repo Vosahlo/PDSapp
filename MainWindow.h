@@ -31,6 +31,7 @@ private:
     int cudlik = -1;
     QFrontaWidget * frontaWidget;
     QSignalMapper * signalMapper;
+    FrontaStatu *frontaStatu;
 
 private slots:
     void addSpeech();

@@ -77,6 +77,7 @@ MainWindow::MainWindow() {
 
     //timer
     QTimer *timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     QCheckBox *autotimer = new QCheckBox();
     QPushButton *startTimer = new QPushButton("Start");
     //remainingTime()
@@ -170,6 +171,7 @@ void MainWindow::clicked() {
 
 void MainWindow::startTime() {
     //timer->start(1000);
+    timer->start(1000);
 }
 
 void MainWindow::openEditSessionWindow() {

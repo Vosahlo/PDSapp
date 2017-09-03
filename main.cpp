@@ -21,7 +21,7 @@ int main(int argv, char **args) {
  * list zemi.
  * http://doc.qt.io/qt-5/qsignalmapper.html signal mapper
  * hlavni recnik vetsi
- * timer
+ * timer http://n9.dy.fi/2015/01/lets-create-a-timer-app/
  * autotimer na tlacitka
  * popsat okynka
  * velikost oken

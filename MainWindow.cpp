@@ -29,6 +29,7 @@ MainWindow::MainWindow() {
     QPushButton *beep = new QPushButton("Beep");
     QPushButton *postTema = new QPushButton("Update");
     QPushButton *remove = new QPushButton("Remove");
+    QPushButton *dispSideWindow = new QPushButton("zobrazit");
     QLineEdit * casBox = new QLineEdit();
     QLabel *autotimerLabel = new QLabel("autotimer");
     QLineEdit * temaBox = new QLineEdit();
@@ -101,6 +102,7 @@ MainWindow::MainWindow() {
     cudlikyLayout->addWidget(remove);
     cudlikyLayout->addWidget(editSession);
     cudlikyLayout->addWidget(beep);
+    cudlikyLayout->addWidget(dispSideWindow);
 
     temaLayout->addWidget(tema);
     temaLayout->addWidget(temaBox);
@@ -136,6 +138,7 @@ MainWindow::MainWindow() {
     connect(frontaStatu, SIGNAL(changed()), this, SLOT(velikost()));
     connect(frontaStatu, SIGNAL(changed()), sideWindow, SLOT(velikost()));
     connect(frontaStatu, SIGNAL(changed()), sideWindow, SLOT(velikost()));
+    connect(dispSideWindow,SIGNAL(clicked()),this,SLOT(showSideWindow()));
 
 
     fronta = new QList<Stat *>;
@@ -191,4 +194,8 @@ void MainWindow::beepnuti() {
 
 void MainWindow::velikost() {
 this->adjustSize();
+}
+
+void MainWindow::showSideWindow() {
+    sideWindow->show();
 }

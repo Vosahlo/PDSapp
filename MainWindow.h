@@ -46,6 +46,8 @@ private slots:
     void addRSpeech();
 
     void remove();
+
+    void showSideWindow();
 };
 
 

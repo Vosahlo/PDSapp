@@ -21,9 +21,8 @@ EditSessionWindow::EditSessionWindow() {
     gridLayout->addWidget(vybor);
     gridLayout->addWidget(comboBox);
 
-
-
-
     this->setLayout(gridLayout);
+    this->setWindowTitle("Edit Settings");
+
     //if vybor=vzbranyVybor
 }

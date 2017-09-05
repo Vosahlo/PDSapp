@@ -24,6 +24,7 @@ SideWindow::SideWindow(FrontaStatu *frontaStatu) {
     frontaWidget = new QFrontaWidget(this,frontaStatu);
     layout->addWidget(frontaWidget);
 
+    setWindowFlags(Qt::WindowStaysOnTopHint);
 
 
 

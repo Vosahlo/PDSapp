@@ -16,7 +16,7 @@ int main(int argv, char **args) {
     return app.exec();
 }
 
- 
+
 /*TODO
  * list zemi.
  * http://doc.qt.io/qt-5/qsignalmapper.html signal mapper

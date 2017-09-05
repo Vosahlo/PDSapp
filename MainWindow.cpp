@@ -21,7 +21,6 @@
 MainWindow::MainWindow() {
     //tlacitka, layouty
 
-
     QPushButton *addbutton = new QPushButton("add");
     QPushButton *addRbutton = new QPushButton("rekt");
     QPushButton *move = new QPushButton("dalsi");

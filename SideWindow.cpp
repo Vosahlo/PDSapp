@@ -58,4 +58,8 @@ void SideWindow::velikost() {
 
 }
 
+void SideWindow::temaUpdate() {
+
+}
+
 

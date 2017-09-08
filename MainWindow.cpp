@@ -131,6 +131,7 @@ MainWindow::MainWindow() {
     connect(startTimer, SIGNAL(clicked()), this, SLOT(startTime()));
     connect(editSession,SIGNAL(clicked()),this,SLOT(openEditSessionWindow()));
     connect(beep,SIGNAL(clicked()),this,SLOT(beepnuti()));
+    connect(postTema,SIGNAL(clicked()),sideWindow,SLOT(temaUpdate()));
     connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
     connect(move, SIGNAL(clicked()), this, SLOT(velikost()));
     connect(frontaStatu, SIGNAL(changed()), this, SLOT(velikost()));

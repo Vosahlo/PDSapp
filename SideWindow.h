@@ -22,6 +22,8 @@ public slots:
     void removeLane();
     void updateTopic();
     void velikost();
+    void temaUpdate();
+
 };
 
 
